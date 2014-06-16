@@ -74,6 +74,43 @@ void initialisation ( char* chartab[], unsigned int tablength, struct data_env* 
 }
 
 /**
+*Fonctions de recupération des données utilisateur
+*/
+
+void initialisation2 (struct data_env* env)
+{
+	int temp;
+	char temp2[] = "0";
+	void* buffer = &temp2;
+
+	write(1, "entrez la hauteur du monde voulu : ", 35);
+	read(0, buffer, sizeof(buffer));
+	temp = atoi(temp2);
+	env->hauteur = temp;
+	temp = 0;
+	
+	write(1, "entrez la largeur du monde voulu : ", 35);
+	read(0, buffer,  sizeof(buffer));
+	temp = atoi(temp2);
+	env->largeur = temp;
+	temp = 0;
+	
+	write(1, "entrez le nombre d'individus initial : ", 39);
+	read(0, buffer,  sizeof(buffer));
+	temp = atoi(temp2);
+	env->nbrindiv_init = temp;
+	temp = 0;
+	
+	write(1, "entrez le nombre de cycles de simulation : ", 43);
+	read(0, buffer,  sizeof(buffer));
+	temp = atoi(temp2);
+	env->nbrcycles = temp;
+
+	check_indiv_init (env);
+
+}
+
+/**
  * vérification de la cohérence entre le nombre d'individus initial et le nombre d'emplacements sur la carte
  */
 int check_indiv_init (struct data_env* env)
