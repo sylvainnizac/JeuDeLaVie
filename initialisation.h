@@ -28,6 +28,6 @@ int check_indiv_init (struct data_env* env);
 /**
 *Fonctions de recupération des données utilisateur
 */
-//void initialisation ();
+void initialisation2 (struct data_env* env);
 
 #endif
