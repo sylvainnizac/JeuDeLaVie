@@ -18,7 +18,19 @@ int main(int argc, char* argv[]) // \brief argc nombre d'arguments dans le main,
 	struct data_indiv** monde = {0};
 	srand(time (NULL)); //\brief génère une nouvelle "graine" pour random()
 
-	initialisation ( argv, argc, &env); //\brief initialisation.c
+	if (argc == 4)
+	{
+		initialisation ( argv, argc, &env); /// initialisation.c
+	}
+	else
+	{
+		initialisation2	(&env); /// initialisation.c
+	}
+	
+	if (env.erreur == -1)
+	{
+		return EXIT_FAILURE;
+	}
 
 	world.H = env.hauteur;
 	world.L = env.largeur;
