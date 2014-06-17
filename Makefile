@@ -6,7 +6,6 @@ SRC= $(wildcard *.c)
 OBJ= $(SRC:.c=.o)
 
 all: $(EXEC)
-	export LD_LIBRARY_PATH=$(PWD)
 
 jeu_de_la_vie: $(OBJ)
 	$(CC) -o $@ $^ $(LDFLAGS)
